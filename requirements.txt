@@ -1,4 +1,3 @@
 langchain==0.1.13
 langchain_community==0.0.29
-pywin32==306
 streamlit==1.32.2
