@@ -8,7 +8,7 @@ from langchain.chains import LLMChain, SimpleSequentialChain
 import pyttsx3
 
 # Set OpenAI API key and Eleven API key
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = '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'
 os.environ["ELEVEN_API_KEY"] = "3ffa54ac53786416ead207dca5ebc721"
 
 # Initialize pyttsx3 engine
