@@ -8,7 +8,7 @@ from langchain.chains import LLMChain, SimpleSequentialChain
 os.environ["OPENAI_API_KEY"] = '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'
 
 # App framework
-st.title("📕 Smart Language Learning System")
+st.title("📕 LangAI")
 prompt = st.text_input("Put your English paragraph for getting correct grammar and pronunciation.")
 
 # Prompt templates for the first sequence
