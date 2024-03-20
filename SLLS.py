@@ -4,15 +4,14 @@ from langchain_community.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SimpleSequentialChain
 
-# Import pyttsx3 library
-import pyttsx3
+# Import pywin32 library for text to speech
+import win32com.client as wincl
 
 # Set OpenAI API key and Eleven API key
 os.environ["OPENAI_API_KEY"] = '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'
-os.environ["ELEVEN_API_KEY"] = "3ffa54ac53786416ead207dca5ebc721"
 
-# Initialize pyttsx3 engine
-engine = pyttsx3.init()
+# Initialize the text-to-speech engine
+speaker = wincl.Dispatch("SAPI.SpVoice")
 
 # App framework
 st.title("📕 Smart Language Learning System")
@@ -62,16 +61,15 @@ if prompt:
     st.title("Corrected Paragraph:")
     st.write(response_title_first)
     st.title("Sentence Structure analysis:")
-    st.write( response_script_first)
+    st.write(response_script_first)
     
     # Run the second sequence
     response_title_second = title_chain_second.run(topic=prompt)
     response_title_second_text = response_title_second  # Store the title response for the second sequence
     
     # Display the response from the second sequence
-    #st.write("Response from the second sequence:")
-    #st.write("Title:", response_title_second)
+    # st.write("Response from the second sequence:")
+    # st.write("Title:", response_title_second)
     
-    # Convert text to speech using pyttsx3
-    engine.say(response_title_second_text)
-    engine.runAndWait()
+    # Convert text to speech using pywin32
+    speaker.Speak(response_title_second_text)
